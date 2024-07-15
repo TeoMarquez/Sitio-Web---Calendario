@@ -1,0 +1,276 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para la barra superior */
+.header {
+  background-color: #0ccaff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  margin-right: 20px; /* Margen a la derecha */
+  width: 99%;
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px; /* Margen a la izquierda */
+}
+
+/* Estilos para la barra izquierda */
+.time-slot {
+  width: 0; /* Cambia el ancho a cero */
+  height: 0;
+  border-right: none; /* Elimina la línea vertical a la derecha */
+  background-color: transparent; /* Hace el fondo transparente */
+  padding: 0; /* Elimina el relleno */
+  margin: 0; /* Elimina el margen */
+  overflow: hidden; /* Evita desbordamientos del contenido */
+  color: transparent; /* Hace el texto transparente */
+  font-size: 0; /* Hace el texto invisible */
+}
+
+/* Estilos para la cuadrícula del calendario */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  width: 70%;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+/* Estilos para las etiquetas de los días */
+.day-label, .day-label-Weekend {
+  border: 1px solid #000000;
+  padding: 5px; /* Reducir el padding */
+  text-align: center;
+  font-weight: bold;
+}
+
+.day-label {
+  background-color: #08d7eec7;
+}
+
+.day-label-Weekend {
+  background-color: #b31313ea;
+}
+
+/* Estilos para las celdas del calendario */
+.cell-day {
+  border: 10px solid #00ddff11;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cell {
+  border: 1px solid #ccc; /* Agrega un borde a todas las celdas */
+  padding: 50px; /* Ajusta el padding según sea necesario */
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box; /* Considera el borde dentro del tamaño de la celda */
+  background-color: #ffffffc7;
+}
+
+.cell:nth-child(n + 8) {
+  grid-column: span 1 / span 7; /* Ocupará 7 columnas y comenzará en la segunda fila */
+}
+
+/* Efecto al pasar el ratón sobre las celdas */
+.cell:hover {
+  background-color: #49d0d787;
+}
+
+/* Estilos para celdas seleccionadas */
+.cell.selected {
+  background-color: #49aad790;
+}
+
+/* Estilo para el fondo */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(80%) saturate(120%);
+  z-index: -10; /* Sitúa el fondo detrás del contenido */
+  transition: background-image 0.5s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ancho al 100% del viewport */
+  height: 100%; /* Alto al 100% del viewport */
+  background-color: rgba(0, 0, 0, 0.27);
+  z-index: -1; /* Sitúa el fondo detrás del contenido */
+}
+
+/* Estilos para los botones */
+button {
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: none; /* Eliminar el borde predeterminado */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #3498db; /* Color de fondo */
+  color: white; /* Color del texto */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+  transition: background-color 0.4s; /* Transición suave */
+  margin-right: 20px; /* Espaciado entre botones */
+}
+
+/* Estilo al pasar el ratón por encima */
+button:hover {
+  background-color: #1c608e; /* Cambio de color de fondo al pasar el ratón */
+}
+
+.calendar-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%; /* Ajusta el ancho */
+  margin-left: 11%; /* Centra horizontalmente */
+}
+
+#current-month {
+  font-family: 'Calibri', sans-serif;
+  font-size: 32px;
+  transition: opacity 0.5s ease-in-out, transform 0.3s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#prev-month, #next-month {
+  margin: 0 15px; /* Ajusta el espacio entre los botones y el mes */
+  font-family: 'Calibri', sans-serif; /* Cambia la fuente */
+  font-size: 14px; /* Ajusta el tamaño del texto */
+  border: none; /* Elimina el borde predeterminado */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #3498db; /* Color de fondo */
+  color: white; /* Color del texto */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+  transition: background-color 0.4s, transform 0.3s, box-shadow 0.3s; /* Transición suave */
+  padding: 10px 20px; /* Espaciado interno */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Efecto de sombra en el texto */
+}
+
+/* Estilo al pasar el ratón por encima */
+#prev-month:hover, #next-month:hover {
+  background-color: #1c608e; /* Cambio de color de fondo al pasar el ratón */
+  transform: scale(1.1); /* Aumenta un poco el tamaño al pasar el ratón */
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6); /* Efecto de sombra al pasar el ratón */
+}
+
+.animate-month {
+  animation: fadeInOut 1s ease-in-out; /* Aplica la animación al texto */
+}
+
+/* Definición de la animación */
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.overlay2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.131); /* Cambiar el último valor para ajustar la opacidad */
+  z-index: 2; /* Ajusta el z-index para que esté por encima del fondo */
+}
+
+.day-events-overlay {
+  display: block;
+  position: a;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(177, 50, 50, 0.131); /* Cambiar el último valor para ajustar la opacidad */
+  z-index: 2; /* Ajusta el z-index para que esté por encima del fondo */
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1;
+  width: max-content;
+  max-width: initial;
+}
+
+.event-button {
+  margin: 0 10px 10px 0; /* Espaciado entre botones y en la parte inferior */
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.event-button:hover {
+  background-color: #1c608e;
+  transform: scale(1.1);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.event-button.selected {
+  background-color: #1c608e; /* Color de fondo cuando el botón está clickeado */
+  transform: scale(1.1); /* Efecto de escala al hacer clic */
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6); /* Efecto de sombra al hacer clic */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .main-content {
+      flex-direction: column;
+  }
+  .time-slot {
+      width: 100%;
+      border-right: none;
+  }
+  .calendar {
+      width: 100%;
+      margin: 20px 0;
+  }
+}

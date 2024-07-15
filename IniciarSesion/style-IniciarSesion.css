@@ -1,0 +1,129 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    overflow: hidden; /* Evita desbordamientos del contenido */
+
+  }
+  
+  .background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5); /* Escala el tamaño del fondo */
+    width: 100%; /* Ajusta al ancho total */
+    height: 100%; /* Ajusta al alto total */
+    background-image: url('fondoIniciarSesion.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(80%) saturate(120%);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho al 100% del viewport */
+    height: 100%; /* Alto al 100% del viewport */
+    background-color: rgba(93, 173, 226, 0.5);
+  }
+  
+  
+  .content {
+    z-index: 1;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Alineación del formulario al centro */
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.647);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(102, 180, 252);
+    width: 60%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.2em; /* Cambia el tamaño del texto según lo necesites */
+  }
+  
+  /* Alineación de los inputs junto a las etiquetas */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  input {
+    width: 256px;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+  }
+  
+  button {
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4285f4;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    font-size: x-large;
+  }
+  
+  button:hover {
+    background-color: #3366cc;
+  }
+  
+  .back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer; /* Añade un cursor al elemento para indicar que es clickeable */
+  }
+  
+  .back-arrow img {
+    width: 75px;
+    height: auto;
+    transition: transform 0.2s ease; /* Agrega una transición suave al cambio de tamaño */
+  }
+  
+  .back-arrow img:hover {
+    transform: scale(1.1); /* Cambia el tamaño al hacer hover */
+  }
+  

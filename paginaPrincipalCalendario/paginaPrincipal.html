@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendario de Eventos</title>
+  <link rel="stylesheet" href="paginaPrincipal.css">
+</head>
+<body>
+    <div class="background"> <!-- Agrega el fondo a este contenedor -->
+        <div class="overlay"></div>
+
+  <header class="header">
+    <div class="calendar-navigation">
+        <div class="calendar-navigation">
+            <button id="prev-month">◄</button> <!-- Flecha izquierda -->
+    <div id="current-month" class="month-name">Enero</div>
+            <button id="next-month">►</button> <!-- Flecha derecha -->
+        </div>
+    </div>
+    <div class="event-buttons">
+      <button id="view-events">Ver eventos</button>
+      <button id="delete-all-event-btn">Eliminar eventos</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="time-slot">
+      <!-- Sección de horarios y nombres de eventos -->
+    </div>
+
+    <div class="calendar">
+        <div class="calendar">
+            
+            <div class="day-label">L</div>
+            <div class="day-label">M</div>
+            <div class="day-label">Mi</div>
+            <div class="day-label">J</div>
+            <div class="day-label">V</div>
+            <div class="day-label-Weekend">S</div>
+            <div class="day-label-Weekend">D</div>
+        </tr>
+        <tr>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+          </div>          
+    </div>
+  </main>
+ 
+
+    <div class="day-events-overlay" id="dayEventsOverlay" style="display: none;">
+      <div class="overlay-content">
+        <span class="close" id="closeDayEventsOverlay">&times;</span>
+        <h2>Eventos del Día</h2>
+        <div id="dayEventsList">
+        </div>
+        <div class="event-buttons">
+            <button id="add-event-btn">Añadir Evento</button>
+            <button id="delete-event-btn">Eliminar Evento</button>
+        </div>
+
+        <div class="overlay2" id="eventOverlay" style="display: none;">
+          <div class="overlay-content">
+            <span class="close" id="closeOverlay">&times;</span>
+            <h2>Ingrese el nombre del evento:</h2>
+            <input type="text" id="eventName" placeholder="Nombre del evento">
+            <button id="saveEventBtn">Guardar</button>
+          </div>
+
+    </div>
+  </div>
+  </div>
+  <script src="ControlFechas.js"></script>
+  <script src="controladorEventos.js"></script>
+  <script src="overlayEventos.js"></script>
+</body>
+</html>
